@@ -1,0 +1,11 @@
+# Object files and compiled output
+*.o
+*.a
+
+# Executables
+push_swap
+
+# Local gitignore for libft files 
+libft/*.o
+libft/libft.a
+
