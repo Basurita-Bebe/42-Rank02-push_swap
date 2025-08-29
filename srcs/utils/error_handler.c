@@ -10,3 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void    error_exit(t_stack_node **a, char **args, char *message)
+{
+    (void)message;
+    write(2, "Error\n", 6);
+    free_stack(a);
+    free_array(args);
+    exit(EXIT_FAILURE);
+}

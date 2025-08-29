@@ -71,3 +71,16 @@ int           stack_size(t_stack_node *stack)
     }
     return (count);
 }
+
+bool    stack_is_sorted(t_stack_node *stack)
+{
+    if (stack == NULL)
+        return (true);
+    while (stack->next != NULL)
+    {
+        if (stack->value > stack->next->value)
+            return (false);
+        stack = stack->next;
+    }
+    return (true);
+}

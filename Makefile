@@ -39,7 +39,7 @@ SRCS = \
 	 srcs/utils/error_handler.c \
 	 srcs/utils/utils.c \
 	 srcs/utils/free.c	\
-	 srcs/utils/testing.c
+	 srcs/testing.c
 
 # Object files director
 OBJS = $(SRCS:.c=.o)
