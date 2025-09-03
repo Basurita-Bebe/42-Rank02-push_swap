@@ -114,29 +114,3 @@ void    normalize_stack (t_stack_node **stack)
         current = current->next;
     }
 }
-
-// For testing
-void print_stack_indices(t_stack_node *stack, char name)
-{
-    t_stack_node *current;
-    
-    if (stack == NULL)
-    {
-        printf("Stack %c is empty.\n", name);
-        return;
-    }
-    
-    printf("Stack %c indices:\n", name);
-    printf(" TOP -> ");
-    
-    current = stack;
-    while (current != NULL)
-    {
-        printf("[%d]", current->index);
-        current = current->next;
-        if (current != NULL)
-            printf(" -> ");
-    }
-    
-    printf(" <- BOTTOM\n");
-}

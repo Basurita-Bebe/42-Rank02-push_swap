@@ -40,6 +40,8 @@ t_stack_node  *find_last_node(t_stack_node *stack)
 
 void          add_node_to_stack(t_stack_node **stack, t_stack_node *new_node)
 {
+    t_stack_node    *last;
+
     if (!stack || !new_node)
         return ;
     if (*stack == NULL)
@@ -47,12 +49,10 @@ void          add_node_to_stack(t_stack_node **stack, t_stack_node *new_node)
         *stack = new_node;
         return ;
     }
-    else
-    {
-        new_node->next = *stack;
-        (*stack)->prev = new_node;
-        *stack = new_node;
-    }
+    last = find_last_node(*stack);
+    last->next = new_node;
+    new_node->prev = last;
+    new_node->next = NULL;
 
 }
 
