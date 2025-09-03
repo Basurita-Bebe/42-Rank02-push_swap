@@ -27,6 +27,7 @@
 typedef struct s_stack_node
 {
     int                 value;
+    int                 index;
     struct s_stack_node *next;
     struct s_stack_node *prev;
 
@@ -61,6 +62,18 @@ char            **parse_args(int argc, char **argv);
 bool            is_valid_number(char *str);
 bool            has_duplicate(t_stack_node *stack);
 void            init_stack_a(t_stack_node **a, char **args_array);
+
+/*  Sorting Functions (sort/)  */
+void    small_sort(t_stack_node **a, t_stack_node **b);
+void    big_sort(t_stack_node **a, t_stack_node **b);
+
+/*  Sort Utilities (sort/sort_utils.c)  */
+t_stack_node    *find_smallest(t_stack_node *stack);
+t_stack_node    *find_largest(t_stack_node *stack);
+int             distance_to_top(t_stack_node *stack, t_stack_node *target);
+void            push_smallest(t_stack_node **a, t_stack_node **b);
+void            normalize_stack(t_stack_node **stack);
+void print_stack_indices(t_stack_node *stack, char name); //testing
 
 /*  Utilities (utils/)  */
 void            free_stack(t_stack_node **stack);

@@ -18,6 +18,7 @@
 /*                  -> 4-5 elements: Push smallest to B, sort 3, push back            */
 
 static void sort_three(t_stack_node **a);
+static void sort_four_five(t_stack_node **a, t_stack_node **b);
 
 void    small_sort(t_stack_node **a, t_stack_node **b)
 {
@@ -65,4 +66,25 @@ static void sort_three(t_stack_node **a)
         rra(a, true);
         sa(a, true);
     }
+}
+
+static void sort_four_five(t_stack_node **a, t_stack_node **b)
+{
+    int size;
+    int need_to_push;
+
+    size = stack_size(*a);
+    // Always 1 push for 4 nodes, and 2 for 5
+    need_to_push = size -3;
+    // 1. Push smallest element/s to b
+    while (need_to_push > 0)
+    {
+        push_smallest(a, b);
+        need_to_push--;
+    }
+    // 2. Sort remaining 3 elements in a
+    sort_three(a);
+    // 3. Push all elements back from b to a
+    while (*b != NULL)
+        pa(a, b, true);
 }

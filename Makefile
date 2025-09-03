@@ -36,6 +36,7 @@ SRCS = \
 	 srcs/stack/stack_ops_3.c \
 	 srcs/sort/small_sort.c \
 	 srcs/sort/big_sort.c \
+	 srcs/sort/sort_utils.c \
 	 srcs/utils/error_handler.c \
 	 srcs/utils/utils.c \
 	 srcs/utils/free.c	\

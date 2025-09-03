@@ -33,20 +33,13 @@ void    free_array(char **array)
 {
     int i;
 
-    printf("free_array called with: %p\n", (void *)array);
     if (array == NULL)
-    {
-        printf("Array is NULL, returning\n");
         return ;
-    }
     i = 0;
     while (array[i] != NULL)
     {
-        printf("Freeing element %d: %p ('%s')\n", i, (void *)array[i], array[i]);
         free(array[i]);
         i++;
     }
-    printf("Freeing array itself: %p\n", (void *)array);
     free(array);
-    printf("free_array completed successfully\n");
 }
